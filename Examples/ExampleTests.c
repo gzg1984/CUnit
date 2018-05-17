@@ -28,12 +28,12 @@
 
 /* WARNING - MAINTENANCE NIGHTMARE AHEAD
  *
- * If you change any of the tests & suites below, you also need 
+ * If you change any of the tests & suites below, you also need
  * to keep track of changes in the result statistics and reflect
  * any changes in the result report counts in print_example_results().
  *
- * Yes, this could have been designed better using a more 
- * automated mechanism.  No, it was not done that way.  
+ * Yes, this could have been designed better using a more
+ * automated mechanism.  No, it was not done that way.
  */
 
 /* Suite initialization/cleanup functions */
@@ -319,22 +319,22 @@ static CU_TestInfo tests_fatal[] = {
 };
 
 static CU_SuiteInfo suites[] = {
-  { "suite_success_both",  suite_success_init, suite_success_clean, tests_success },
-  { "suite_success_init",  suite_success_init, NULL,                tests_success },
-  { "suite_success_clean", NULL,               suite_success_clean, tests_success },
-  { "test_failure",        NULL,               NULL,                tests_failure },
-  { "suite_failure_both",  suite_failure_init, suite_failure_clean, tests_suitefailure }, /* tests should not run */
-  { "suite_failure_init",  suite_failure_init, NULL,                tests_suitefailure }, /* tests should not run */
-  { "suite_success_but_failure_clean", NULL,   suite_failure_clean, tests_suitefailure }, /* tests will run, suite counted as running, but suite tagged as a failure */
-  { "TestSimpleAssert",    NULL,               NULL,                tests_simple },
-  { "TestBooleanAssert",   NULL,               NULL,                tests_bool },
-  { "TestEqualityAssert",  NULL,               NULL,                tests_equal },
-  { "TestPointerAssert",   NULL,               NULL,                tests_ptr },
-  { "TestNullnessAssert",  NULL,               NULL,                tests_null },
-  { "TestStringAssert",    NULL,               NULL,                tests_string },
-  { "TestNStringAssert",   NULL,               NULL,                tests_nstring },
-  { "TestDoubleAssert",    NULL,               NULL,                tests_double },
-  { "TestFatal",           NULL,               NULL,                tests_fatal },
+  { "suite_success_both",  suite_success_init, suite_success_clean, NULL, NULL, tests_success},
+  { "suite_success_init",  suite_success_init, NULL,                NULL, NULL, tests_success},
+  { "suite_success_clean", NULL,               suite_success_clean, NULL, NULL, tests_success},
+  { "test_failure",        NULL,               NULL,                NULL, NULL, tests_failure},
+  { "suite_failure_both",  suite_failure_init, suite_failure_clean, NULL, NULL, tests_suitefailure}, /* tests should not run */
+  { "suite_failure_init",  suite_failure_init, NULL,                NULL, NULL, tests_suitefailure}, /* tests should not run */
+  { "suite_success_but_failure_clean", NULL,   suite_failure_clean, NULL, NULL, tests_suitefailure}, /* tests will run, suite counted as running, but suite tagged as a failure */
+  { "TestSimpleAssert",    NULL,               NULL,                NULL, NULL, tests_simple},
+  { "TestBooleanAssert",   NULL,               NULL,                NULL, NULL, tests_bool},
+  { "TestEqualityAssert",  NULL,               NULL,                NULL, NULL, tests_equal},
+  { "TestPointerAssert",   NULL,               NULL,                NULL, NULL, tests_ptr},
+  { "TestNullnessAssert",  NULL,               NULL,                NULL, NULL, tests_null},
+  { "TestStringAssert",    NULL,               NULL,                NULL, NULL, tests_string},
+  { "TestNStringAssert",   NULL,               NULL,                NULL, NULL, tests_nstring},
+  { "TestDoubleAssert",    NULL,               NULL,                NULL, NULL, tests_double},
+  { "TestFatal",           NULL,               NULL,                NULL, NULL, tests_fatal},
 	CU_SUITE_INFO_NULL,
 };
 
